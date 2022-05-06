@@ -22,11 +22,8 @@ const SignIn = () => {
 
   const signInSchema = Yup.object()
     .shape({
-      email: Yup.string()
-        .email("Invalid email")
-        .max(255)
-        .required("Le champ est requis"),
-      password: Yup.string().required("Le champ est requis"),
+      email: Yup.string().email("Invalid email").max(255).required("Invalid"),
+      password: Yup.string().required("Invalid"),
     })
     .required()
 
@@ -35,8 +32,8 @@ const SignIn = () => {
       <ErrorMessage display={displayErr}>
         Les informations ne sont pas conformes
       </ErrorMessage>
-      <div className="flex flex-col p-4 rounded-lg border-2 border-black justify-center w-3/4 mx-auto my-5 items-center gap-y-10">
-        <div className="text-3xl font-bold">Sign in</div>
+      <div className="flex justify-center ">
+        <div className="text-3xl">Sign in</div>
         <Formik
           initialValues={{
             email: "",
@@ -46,11 +43,7 @@ const SignIn = () => {
           onSubmit={handleFormSubmit}
         >
           {({ handleSubmit, isSubmitting, isValid }) => (
-            <form
-              noValidate
-              className="flex flex-col gap-y-7 items-center h-25 w-80"
-              onSubmit={handleSubmit}
-            >
+            <form noValidate className="" onSubmit={handleSubmit}>
               <FormField name="email" placeholder="E-mail" />
               <FormField
                 name="password"

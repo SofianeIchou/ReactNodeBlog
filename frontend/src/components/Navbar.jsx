@@ -10,33 +10,33 @@ const Navbar = () => {
   }, [logout])
 
   return (
-    <div className="flex justify-between p-2 bg-green-500 text-white">
-      <div className="text-2xl">
-        <Link href="/">Blog</Link>
+    <div className="">
+      <div className="">
+        <Link href="/">Blog de avetis</Link>
       </div>
       {!session ? (
-        <div className="flex gap-2">
-          <div className="border-2 border-white rounded-xl pr-2 pl-2 text-md">
+        <div className="">
+          <div className="">
             <Link href="/sign-in">
               <a>Se connecter</a>
             </Link>
           </div>
-          <div className="border-2 border-white rounded-xl pr-2 pl-2 text-md">
+          <div className="">
             <Link href="/sign-up">
               <a>S'inscrire</a>
             </Link>
           </div>
         </div>
       ) : (
-        <div className="flex gap-2">
-          <div className="text-white align-bottom pt-1 text-2xl">
+        <div className="">
+          <div className="">
             <Link href={"/profile/" + session.payload.user.id}>
               <a>
                 <CgProfile />
               </a>
             </Link>
           </div>
-          <div className="text-white align-bottom pt-1 text-2xl">
+          <div className="">
             <a href="/" onClick={handleLogout}>
               <FiLogOut />
             </a>

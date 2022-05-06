@@ -14,12 +14,9 @@ const AccountEdit = () => {
     username: Yup.string()
       .matches("[a-zA-Z]", "No special characters allowed")
       .max(255)
-      .required("Le champ est requis"),
-    email: Yup.string()
-      .email("Invalid email")
-      .max(255)
-      .required("Le champ est requis"),
-    password: Yup.string().required("Le champ est requis"),
+      .required("Invalid"),
+    email: Yup.string().email("Invalid email").max(255).required("Invalid"),
+    password: Yup.string().required("Invalid"),
   })
 
   const handleFormSubmit = useCallback(

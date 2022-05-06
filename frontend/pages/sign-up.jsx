@@ -13,12 +13,9 @@ const SignUp = () => {
     username: Yup.string()
       .matches("[a-zA-Z]", "No special characters allowed")
       .max(255)
-      .required("Le champ est requis"),
-    email: Yup.string()
-      .email("Invalid email")
-      .max(255)
-      .required("Le champ est requis"),
-    password: Yup.string().required("Le champ est requis"),
+      .required("Invalid"),
+    email: Yup.string().email("Invalid email").max(255).required("Invalid"),
+    password: Yup.string().required("Invalid"),
   })
 
   const handleFormSubmit = useCallback(
@@ -36,8 +33,8 @@ const SignUp = () => {
   return (
     <>
       <ErrorMessage display={displayErr}>Veuillez réessayez.</ErrorMessage>
-      <div className="flex flex-col p-4 rounded-lg border-2 border-black justify-center w-3/4 mx-auto my-5 items-center gap-y-10">
-        <div className="text-3xl font-bold">Nous rejoindre !</div>
+      <div className="flex flex-col p-4 rounded-lg border-black justify-center w-3/4 mx-auto my-5 items-center gap-y-10">
+        <div className="text-3xl font-italic">Faire parti de la presse</div>
         <Formik
           initialValues={{ username: "", email: "", password: "" }}
           validationSchema={signUpSchema}
@@ -62,7 +59,7 @@ const SignUp = () => {
                 className="self-center"
                 type="submit"
               >
-                Nous rejoindre !
+                Rejoindre la presse
               </Button>
             </form>
           )}

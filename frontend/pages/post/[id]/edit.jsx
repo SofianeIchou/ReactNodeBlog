@@ -21,8 +21,8 @@ const EditPost = () => {
   )
   const postSchema = Yup.object()
     .shape({
-      title: Yup.string().max(72).required("Le champ est requis"),
-      content: Yup.string().required("Le champ est requis"),
+      title: Yup.string().max(72).required("Invalid"),
+      content: Yup.string().required("Invalid"),
     })
     .required()
 

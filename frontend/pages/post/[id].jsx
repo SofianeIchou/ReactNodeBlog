@@ -48,7 +48,7 @@ const Id = () => {
     <>
       <div className="flex flex-col p-5 gap-y-2">
         <div className="flex flex-col">
-          <div className="text-4xl font-bold">{post.title}</div>
+          <div className="text-4xl italic">{post.title}</div>
           <div className="text-sm italic">
             by {post.author} {": "}
             {moment(post.createdAt).format("dddd DD MMMM yyyy - HH:mm")}

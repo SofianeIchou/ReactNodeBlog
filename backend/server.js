@@ -30,6 +30,4 @@ SessionRoute({ app })
 UserRoute({ app })
 PostRoute({ app })
 CommentRoute({ app })
-app.listen(process.env.port, () =>
-  logger.info(`listening on port ${process.env.port}`)
-)
+app.listen(3001, () => logger.info(`listening on port 3001`))
