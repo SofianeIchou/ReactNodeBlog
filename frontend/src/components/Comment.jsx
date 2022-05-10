@@ -12,28 +12,28 @@ const Comment = (props) => {
 
   return (
     <>
-      <div className="flex flex-col border-2 border-black w-1/2 rounded p-2">
+      <div className="">
         <Link href={"/profile/" + comment.userId}>
-          <a className="text-2xl text-bold hover:underline">{comment.author}</a>
+          <a className="">{comment.author}</a>
         </Link>
         <div>{comment.content}</div>
-        <div className="flex justify-end text-gray-600 text-sm italic">
+        <div className="">
           {moment(comment.createdAt).format("dddd MMM yyyy - HH:mm")}
           {comment.userId === session.payload.user.id ||
           comment.post === session.payload.user.id ||
           session.payload.user.role === 3 ? (
-            <div className="flex text-2xl">
+            <div className="">
               <Link
                 href={
                   "/post/" + comment.postId + "/comment/" + comment.id + "/edit"
                 }
               >
                 <a>
-                  <AiFillEdit className="hover:text:bg-green-700" />
+                  <AiFillEdit className="" />
                 </a>
               </Link>
               <AiFillDelete
-                className="hover:text:bg-green-700"
+                className=""
                 onClick={() => handleDeleteClick(comment.id)}
               />
             </div>

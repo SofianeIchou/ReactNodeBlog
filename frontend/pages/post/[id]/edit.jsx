@@ -49,17 +49,14 @@ const EditPost = () => {
             onSubmit={handleFormSubmit}
           >
             {({ handleSubmit, isSubmitting, isValid }) => (
-              <form
-                className="flex flex-col items-center gap-y-7"
-                onSubmit={handleSubmit}
-              >
-                <div className="text-3xl">Modifier mon article !</div>
+              <form className="" onSubmit={handleSubmit}>
+                <div className="">Modifier mon article !</div>
 
                 <FormField name="title" as={Input} placeholder="Titre" />
                 <FormField name="content" as={TextArea} placeholder="Contenu" />
                 <Button
                   disabled={isSubmitting && !isValid}
-                  className="self-center"
+                  className=""
                   type="submit"
                 >
                   Modifier !

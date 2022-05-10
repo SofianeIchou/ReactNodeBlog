@@ -33,19 +33,15 @@ const SignUp = () => {
   return (
     <>
       <ErrorMessage display={displayErr}>Veuillez réessayez.</ErrorMessage>
-      <div className="flex flex-col p-4 rounded-lg border-black justify-center w-3/4 mx-auto my-5 items-center gap-y-10">
-        <div className="text-3xl font-italic">Faire parti de la presse</div>
+      <div className="">
+        <div className="">Faire parti de la presse</div>
         <Formik
           initialValues={{ username: "", email: "", password: "" }}
           validationSchema={signUpSchema}
           onSubmit={handleFormSubmit}
         >
           {({ handleSubmit, isSubmitting, isValid }) => (
-            <form
-              noValidate
-              className="flex flex-col gap-y-7 items-center h-25 w-80"
-              onSubmit={handleSubmit}
-            >
+            <form noValidate className="" onSubmit={handleSubmit}>
               <FormField name="username" placeholder="username" />
               <FormField name="email" placeholder="E-mail" />
               <FormField
@@ -56,7 +52,7 @@ const SignUp = () => {
 
               <Button
                 disabled={isSubmitting && !isValid}
-                className="self-center"
+                className=""
                 type="submit"
               >
                 Rejoindre la presse

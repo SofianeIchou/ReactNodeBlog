@@ -42,20 +42,17 @@ const IndexHome = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-y-2">
+      <div className="">
         {session && session.payload.user.role !== 1 && (
-          <div className="pt-16">
+          <div className="">
             <Formik
               initialValues={{ title: "", content: "" }}
               validationSchema={postSchema}
               onSubmit={handleFormSubmit}
             >
               {({ handleSubmit, isSubmitting, isValid }) => (
-                <form
-                  className="flex flex-col items-center gap-y-7"
-                  onSubmit={handleSubmit}
-                >
-                  <div className="text-3xl">Ajouter un article !</div>
+                <form className="" onSubmit={handleSubmit}>
+                  <div className="">Ajouter un article !</div>
 
                   <FormField name="title" as={Input} placeholder="Titre" />
                   <FormField
@@ -65,7 +62,7 @@ const IndexHome = () => {
                   />
                   <Button
                     disabled={isSubmitting && !isValid}
-                    className="self-center"
+                    className=""
                     type="submit"
                   >
                     Valider !
@@ -76,15 +73,13 @@ const IndexHome = () => {
           </div>
         )}
         {posts.length > 0 ? (
-          <div className="flex flex-col items-center gap-5">
+          <div className="">
             {posts.map((post) => (
               <Post key={post.id} post={post} />
             ))}
           </div>
         ) : (
-          <div className="text-2xl text-center text-red-500">
-            Il n'y a pas d'articles
-          </div>
+          <div className="">Il n'y a pas d'articles</div>
         )}
       </div>
     </>

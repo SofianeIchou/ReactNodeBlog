@@ -40,8 +40,8 @@ const EditComment = () => {
   return (
     <>
       {comment ? (
-        <div className="flex flex-col items-center gap-y-8">
-          <div className="text-2xl text-bold">Modifier your comment : </div>
+        <div className="">
+          <div className="">Modifier your comment : </div>
           <Formik
             initialValues={{ content: comment.content }}
             onSubmit={handleFormSubmit}
@@ -51,7 +51,7 @@ const EditComment = () => {
                 <FormField name="content" as={TextArea} />
                 <Button
                   disabled={isSubmitting && !isValid}
-                  className="w-auto self-center"
+                  className=""
                   type="submit"
                 >
                   Modifier !

@@ -19,23 +19,23 @@ const Post = (props) => {
   )
 
   return (
-    <div className="flex flex-col w-2/4 border-b-2 border-green-500 rounded p-3">
+    <div className="">
       <Link href={"/post/" + post.id}>
-        <a className="text-xl font-bold hover:underline">{post.title}</a>
+        <a className="">{post.title}</a>
       </Link>
       <div>{post.content}</div>
-      <div className="text-gray-600 text-sm self-end flex gap-x-2 italic">
+      <div className="">
         par {post.author} le{" "}
         {moment(post.createdAt).format("dddd DD MMM yyyy à HH:mm")}
         {session &&
         (session.payload.user.id === post.userId ||
           session.payload.user.role === 3) ? (
-          <div className="flex text-2xl">
+          <div className="">
             <Link href={"/post/" + post.id + "/edit"}>
-              <AiFillEdit className="hover:text:bg-green-700 cursor-pointer" />
+              <AiFillEdit className="" />
             </Link>
             <AiFillDelete
-              className="hover:text:bg-green-700 cursor-pointer"
+              className=""
               onClick={() => handleDeleteClick(post.id)}
             />
           </div>

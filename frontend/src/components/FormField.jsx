@@ -10,15 +10,9 @@ const FormField = (props) => {
       {({ field, meta: { error, touched } }) => (
         <div className={classNames(className)}>
           <label className="text-black">
-            <Component
-              {...field}
-              className="border-2 w-80 border-black rounded-xl h-14 pr-2 pl-2 text-md placeholder:text-green-700"
-              {...otherProps}
-            />
+            <Component {...field} className="" {...otherProps} />
           </label>
-          {touched && error ? (
-            <p className=" rounded w-full text-red-600 font-bold">{error}</p>
-          ) : null}
+          {touched && error ? <p className="">{error}</p> : null}
         </div>
       )}
     </Field>

@@ -54,11 +54,11 @@ const Id = () => {
     <>
       {user ? (
         <>
-          <div className="flex flex-col rounded border-2 border-black mx-auto w-3/4 my-8 p-2">
-            <div className="text-center text-2xl font-bold">Mon compte</div>
-            <div className="text-bold text-xl">username : {user.username}</div>
-            <div className="text-bold text-xl">E-mail : {user.email}</div>
-            <div className="text-bold text-xl">
+          <div className="">
+            <div className="">Mon compte</div>
+            <div className="">username : {user.username}</div>
+            <div className="">E-mail : {user.email}</div>
+            <div className="">
               Role :{" "}
               {user.role === 1
                 ? "Lecteur"
@@ -67,17 +67,17 @@ const Id = () => {
                 : "Admin"}
             </div>
             {session.payload.user.id === user.id && (
-              <div className="flex gap-x-5 w-full">
+              <div className="">
                 <Link href={"/profile/" + user.id + "/edit"}>
                   <a>
-                    <Button className="bg-blue-300">Modifier</Button>
+                    <Button className="">Modifier</Button>
                   </a>
                 </Link>
                 <Button>Supprimer</Button>
               </div>
             )}
             {session && session.payload.user.role === 3 && (
-              <div className="text-xl flex justify-end border-t-2 border-black my-2 p-2">
+              <div className="">
                 <Formik
                   onSubmit={handleFormSubmit}
                   initialValues={{ role: user.role }}
@@ -86,11 +86,7 @@ const Id = () => {
                     <form onSubmit={handleSubmit}>
                       <label htmlFor="role">
                         Selectionner rôle :
-                        <Field
-                          as="select"
-                          name="role"
-                          className="p-2 border-2 border-black rounded ml-5"
-                        >
+                        <Field as="select" name="role" className="">
                           <option value={1}>Lecteur</option>
                           <option value={2}>Auteur</option>
                           <option value={3}>Admin</option>
@@ -98,7 +94,7 @@ const Id = () => {
                       </label>
                       <Button
                         disabled={isSubmitting && !isValid}
-                        className="bg-blue-200 ml-5 text-sm p-1 border-2 border-black shadow"
+                        className=""
                         type="submit"
                       >
                         Modifier rôle !
@@ -106,7 +102,7 @@ const Id = () => {
                       <Link href={"/profile/" + user.id + "/edit"}>
                         <a>
                           <Button
-                            className="bg-blue-200 text-sm p-1 border-2 border-black shadow"
+                            className=""
                             disabled={isSubmitting && !isValid}
                           >
                             Modifier
@@ -116,7 +112,7 @@ const Id = () => {
                       <Button
                         disabled={isSubmitting && !isValid}
                         onClick={() => handleDeleteClick(user.id)}
-                        className="text-sm p-1 border-2 border-black shadow"
+                        className=""
                       >
                         Supprimer
                       </Button>

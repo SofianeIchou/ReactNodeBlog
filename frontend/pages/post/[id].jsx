@@ -46,25 +46,25 @@ const Id = () => {
 
   return (
     <>
-      <div className="flex flex-col p-5 gap-y-2">
-        <div className="flex flex-col">
-          <div className="text-4xl italic">{post.title}</div>
-          <div className="text-sm italic">
+      <div className="">
+        <div className="">
+          <div className="">{post.title}</div>
+          <div className="">
             by {post.author} {": "}
             {moment(post.createdAt).format("dddd DD MMMM yyyy - HH:mm")}
           </div>
         </div>
-        <div className="text-xl">{post.content}</div>
+        <div className="">{post.content}</div>
 
         <>
           <div>Write a comment : </div>
           <Formik initialValues={{ content: "" }} onSubmit={handleFormSubmit}>
             {({ handleSubmit, isSubmitting, isValid }) => (
-              <form className="flex gap-x-2" onSubmit={handleSubmit}>
+              <form className="" onSubmit={handleSubmit}>
                 <FormField name="content" as={TextArea} />
                 <Button
                   disabled={isSubmitting && !isValid}
-                  className="w-auto self-center"
+                  className=""
                   type="submit"
                 >
                   Comment !
@@ -72,8 +72,8 @@ const Id = () => {
               </form>
             )}
           </Formik>
-          <div className="flex flex-col gap-y-8">
-            <div className="text-3xl text-bold">Comments : </div>
+          <div className="">
+            <div className="">Comments : </div>
             {post.comments.map((comment) => (
               <Comment key={comment.id} comment={comment} />
             ))}

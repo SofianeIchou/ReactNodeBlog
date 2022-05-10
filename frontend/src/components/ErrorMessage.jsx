@@ -5,12 +5,9 @@ const ErrorMessage = (props) => {
 
   return (
     <div
-      className={classNames(
-        "w-full bg-green-600 text-black h-8 font-bold text-xl text-center",
-        {
-          hidden: !display,
-        }
-      )}
+      className={classNames("", {
+        hidden: !display,
+      })}
       {...otherProps}
     />
   )

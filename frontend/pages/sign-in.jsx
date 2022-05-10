@@ -32,8 +32,8 @@ const SignIn = () => {
       <ErrorMessage display={displayErr}>
         Les informations ne sont pas conformes
       </ErrorMessage>
-      <div className="flex justify-center ">
-        <div className="text-3xl">Sign in</div>
+      <div className="">
+        <div className="">Sign in</div>
         <Formik
           initialValues={{
             email: "",
@@ -53,7 +53,7 @@ const SignIn = () => {
 
               <Button
                 disabled={isSubmitting && !isValid}
-                className="self-center"
+                className=""
                 type="submit"
               >
                 Connexion
